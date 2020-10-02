@@ -1,0 +1,48 @@
+{
+  // "root": true,
+  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "plugins": ["prettier", "react-hooks"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules"],
+        "paths": ["app/"]
+      }
+    }
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "import/no-cycle": 0,
+    "react/no-array-index-key": 0,
+    "no-console": 0,
+    "max-len": 0,
+    "no-nested-ternary": 0,
+    "import/prefer-default-export": "off",
+    "no-param-reassign": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "react/forbid-prop-types": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/destructuring-assignment": [
+      1,
+      "always",
+      {
+        "ignoreClassFields": true
+      }
+    ],
+    "no-use-before-define": 0
+  }
+}
