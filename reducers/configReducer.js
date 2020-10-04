@@ -1,14 +1,14 @@
-import * as actionTypes from "./actionTypes";
+import * as actionTypes from './actionTypes';
 
 export const actions = {
-  setConfig: config => ({
+  setConfig: (config) => ({
     type: actionTypes.SET_CONFIG,
-    config
-  })
+    config,
+  }),
 };
 
 export const initialState = {
-  deviceWidth: null
+  deviceWidth: null,
 };
 
 const reducer = (state = initialState, action) => {
@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
     case actionTypes.SET_CONFIG: {
       return {
         ...state,
-        ...action.config
+        ...action.config,
       };
     }
   }

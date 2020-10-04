@@ -1,5 +1,5 @@
-import { default as config } from "./configReducer";
+import { default as config } from './configReducer';
 
 export default {
-  config
+  config,
 };

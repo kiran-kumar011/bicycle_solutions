@@ -1,33 +1,30 @@
-import React from "react";
-import { Provider } from "react-redux";
-import App from "next/app";
-import { ThemeProvider } from "styled-components";
-import { wrapper } from "~/utils/createStore";
+import React from 'react';
+import { Provider } from 'react-redux';
+import App from 'next/app';
+import { ThemeProvider } from 'styled-components';
+import { wrapper } from '~/utils/createStore';
 
-import { getMqFromUA, getMqFromNavigator } from "~/utils/getDevice";
-import {
-  configActions
-} from "~/reducers/actions";
-import themeVars from "~/styles/variables";
-
+import { getMqFromUA, getMqFromNavigator } from '~/utils/getDevice';
+import { configActions } from '~/reducers/actions';
+import themeVars from '~/styles/variables';
 
 class MyApp extends App {
   state = {
-    deviceWidth: "900"
+    deviceWidth: '900',
   };
-  static async getInitialProps({ Component, ctx }) {
 
+  static async getInitialProps({ Component, ctx }) {
     let pageProps = Component.getInitialProps
       ? await Component.getInitialProps(ctx)
       : {};
 
-    if (ctx.req && ctx.req.headers["user-agent"]) {
+    if (ctx.req && ctx.req.headers['user-agent']) {
       pageProps = {
         ...pageProps,
-        ...getMqFromUA(ctx.req.headers["user-agent"])
+        ...getMqFromUA(ctx.req.headers['user-agent']),
       };
       ctx.store.dispatch(
-        configActions.setConfig(getMqFromUA(ctx.req.headers["user-agent"]))
+        configActions.setConfig(getMqFromUA(ctx.req.headers['user-agent']))
       );
     }
 
@@ -35,12 +32,12 @@ class MyApp extends App {
   }
 
   componentDidMount() {
-    window.addEventListener("resize", this.onResize);
+    window.addEventListener('resize', this.onResize);
     this.onResize();
   }
 
   componentWillUnmount() {
-    window.addEventListener("resize", this.onResize);
+    window.addEventListener('resize', this.onResize);
   }
 
   onResize = () => {
@@ -56,12 +53,12 @@ class MyApp extends App {
     const {
       Component,
       pageProps = {
-        mq: "desktop",
-        deviceHeight: "600",
-        deviceWidth: "900",
-        orientation: "landscape"
+        mq: 'desktop',
+        deviceHeight: '600',
+        deviceWidth: '900',
+        orientation: 'landscape',
       },
-      store
+      store,
     } = this.props;
     const { mq, deviceHeight, orientation } = pageProps;
     const { deviceWidth } = this.state;
@@ -71,18 +68,17 @@ class MyApp extends App {
       deviceWidth,
       deviceHeight,
       orientation,
-      ...this.state
+      ...this.state,
     };
 
     return (
-        // <Provider store={store}>
-          <ThemeProvider theme={theme}>
-          <Component {...pageProps} {...this.state} />
-          </ThemeProvider>
-        //  </Provider>
+      // <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} {...this.state} />
+      </ThemeProvider>
+      //  </Provider>
     );
   }
 }
 
 export default wrapper.withRedux(MyApp);
-

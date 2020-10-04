@@ -1,1 +1,1 @@
-export { actions as configActions } from "./configReducer";
+export { actions as configActions } from './configReducer';

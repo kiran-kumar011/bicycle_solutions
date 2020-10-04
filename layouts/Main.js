@@ -1,25 +1,17 @@
-import { connect } from "react-redux";
-import {
-  MainContainer
-} from "./styles";
+import { connect } from 'react-redux';
+import { MainContainer } from './styles';
 
-const Main = ({
-  children,
-  deviceWidth,
-}) => {
-
+const Main = ({ children, deviceWidth }) => {
   return (
     <>
-      <MainContainer>
-                {children}
-      </MainContainer>
+      <MainContainer>{children}</MainContainer>
     </>
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    deviceWidth: state.config.deviceWidth
+    deviceWidth: state.config.deviceWidth,
   };
 };
 

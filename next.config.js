@@ -1,6 +1,7 @@
-const withCSS = require("@zeit/next-css");
-const withSass = require("@zeit/next-sass");
-const envConfig = require("config");
+const withCSS = require('@zeit/next-css');
+const withSass = require('@zeit/next-sass');
+const envConfig = require('config');
+
 module.exports = withSass(
   withCSS({
     webpack: (config, { isServer }) => {
@@ -11,18 +12,18 @@ module.exports = withSass(
 
       config.module.rules.push({
         test: /\.svg$/,
-        use: ["@svgr/webpack"]
+        use: ['@svgr/webpack'],
       });
 
       config.module.rules.push({
         test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
         use: {
-          loader: "url-loader",
+          loader: 'url-loader',
           options: {
             limit: 100000,
-            name: "[name].[ext]"
-          }
-        }
+            name: '[name].[ext]',
+          },
+        },
       });
 
       // if (!isServer) {
@@ -36,7 +37,7 @@ module.exports = withSass(
     },
 
     publicRuntimeConfig: {
-      applicationUrl: envConfig.get("APPLICATION_URL")
-    }
+      applicationUrl: envConfig.get('APPLICATION_URL'),
+    },
   })
 );

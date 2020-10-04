@@ -1,8 +1,3 @@
+import themeVars from '~/styles/variables';
 
-  import themeVars from "~/styles/variables";
-  
-  
-  export {
-    themeVars
-  };
-  
+export { themeVars };
