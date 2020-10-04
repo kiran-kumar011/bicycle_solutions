@@ -1,0 +1,459 @@
+@import "fonts.scss";
+@import "variables.scss";
+@import "background-colors.scss";
+@import "text-color.scss";
+@import "reset.scss";
+
+
+// to eleminate blue heighlight on click working on chrome 
+// TODO: fix this on different browsers
+body {
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: $extraExtraLightGreyBlue !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.screen-blur {
+  filter: blur(5px);
+}
+
+// TO disable zooming in iphone in select dropdown
+
+// @media screen and (-webkit-min-device-pixel-ratio: 0) {
+//   select:focus,box:focus, text input:focus {
+//           font-size: 16px !important;
+//       }
+//   }
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @media (max-width: $tablet) {
+    select:focus, input:focus {
+      font-size: 16px !important;
+    }
+  }
+  }
+
+.grayscale {
+  // -moz-filter: grayscale(100%);
+  // -webkit-filter: grayscale(100%);
+  // filter: gray; /* IE6-9 */
+//  filter: grayscale(100%); 
+}
+
+* {
+  box-sizing: border-box;
+
+  @media (hover: on-demand){
+    hover: none;
+}
+
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.MuiBackdrop-root {
+  background-color: $backdropColor !important;
+}
+
+.MuiSnackbar-root {
+  z-index: 1500 !important;
+  @media (max-width: 600px) {
+    bottom: 85px !important;
+  }
+}
+
+a{
+  color: $primaryBlue;
+  &:hover {
+    text-decoration: underline;
+}
+}
+
+.MuiFab-root {
+  box-shadow: none !important;
+   min-height: 0px !important; 
+   transition: none !important;
+}
+
+// .progress-bar {
+//   position: absolute !important;
+//   top:64px !important;
+// }
+// ::-webkit-scrollbar {
+//   width: 0px !important;
+//   background: transparent !important;
+// }
+
+.stop-overflow {
+  overflow: hidden;
+}
+
+.Mui-disabled:before{
+  border-bottom-style: solid !important;
+}
+
+.MuiPaper-root {
+  .MuiBackdrop-root {
+    align-items: flex-end !important
+  }
+}
+
+
+.hamburger-drawer {
+  .MuiPaper-root {
+    height: 100%;
+  }
+}
+
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: #fff;
+}
+
+.rightChevronWrapper {
+  right: 20px !important;
+}
+
+.leftChevronWrapper {
+  left: 20px !important;
+}
+
+.rightChevronWrapperComment {
+  right: 10px !important;
+}
+
+.leftChevronWrapperComment {
+  left: 10px !important;
+}
+
+.wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.react-images__blanket {
+  z-index: 1600 !important;
+  background-color: $backdropColor !important;
+  transition: none !important;
+
+}
+
+.react-images__positioner {
+  z-index: 1600 !important;
+  transition: none !important;
+}
+
+.react-images__view-image {
+  max-height: calc(100vh - 200px) !important;
+}
+
+// div[aria-labelledby="landscape-modal"] {
+//   overflow: scroll;
+// }
+
+.react-images__view--isModal{
+  height: 100vh;
+//   display: flex;
+// justify-content: center;
+// align-items: center;
+
+}
+
+.react-images__view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-images__footer {
+  display: none !important;
+}
+
+.test {
+  background: $darkBlue !important;
+}
+
+.headroom {
+  // top: 80px !important;
+  left: unset !important;
+  right: unset !important;
+  z-index: 1;
+}
+
+.headroom--unpinned {
+  // transform: translateY(-100%);
+
+  .quesst-button-top {
+    top:$newQuesstButtonTop !important;
+    @media (max-width: 640px) {
+      top: $newQuesstButtonTopMobile !important;
+    }
+  }
+
+  .quesst-button-top-sub {
+    top:$newQuesstButtonTopSub !important;
+    @media (max-width: 640px) {
+      top: $newQuesstButtonTopMobileSub !important;
+    }
+  }
+
+  
+}
+.headroom--pinned {
+  // left: 0;
+  // right: 0;
+  position: fixed;
+  top: 84px !important;
+
+  @media (max-width: 640px) {
+    top: 70px !important;
+  }
+  
+}
+
+.MuiPaper-elevation1 {
+box-shadow: none !important;
+}
+
+
+[class*='AutoRotatingCarousel-arrowLeft-'] {
+  left: 0px !important;
+}
+
+[class*='AutoRotatingCarousel-arrowRight-'] {
+  right: 0px !important;
+}
+
+[class*='AutoRotatingCarousel-dots-'] {
+  padding-top: 0px !important;
+}
+
+[class*='AutoRotatingCarousel-content-'] {
+  width: 720px !important;
+  max-width: 730px !important;
+  height: 100% !important;
+  max-height: 100% !important;
+
+  @media (max-width: 760px) {
+    width:100%;
+  max-width: 100%;
+  }
+}
+
+[class*='Dots-dot-'] {
+  @media (max-width: 760px) {
+  background: $primaryBlue !important;
+  }
+}
+
+
+.MuiChip-label {
+  overflow: unset !important;
+}
+
+.author-chip {
+  .MuiChip-label {
+    padding: 0px !important;
+  }
+}
+
+.MuiMobileStepper-root {
+  width: 100%;
+  padding: 0px !important;
+  margin-top:  20px;
+  background: none !important;
+}
+
+.MuiMobileStepper-dotActive {
+  background-color: $primaryBlue !important;
+}
+
+
+
+.MuiAutocomplete-root {
+  flex-grow: 1;
+  .MuiInput-underline.Mui-focused:after {
+    border-bottom: solid 2px $primaryBlue !important;
+  }
+  .MuiInput-underline {
+    &:after {
+      border-bottom: solid 2px $primaryBlue !important;
+    }
+    &:hover {
+      &:after {
+        border-bottom: solid 2px $primaryBlue !important;
+      }
+      &:before {
+        border-bottom: solid 2px $mediumGrey !important;
+      }
+   }
+  }
+}
+
+.MuiListItem-root {
+
+  .Mui-selected {
+    background-color: $white !important;
+  }
+
+  &:hover {
+  .MuiListItemText-root {
+    span{
+
+      color: $primaryBlue !important;
+    }
+      }
+    }
+  }
+
+  .Mui-selected {
+    background-color: $white !important;
+    &:hover {
+      background-color: $extraExtraLightGrey !important;
+        }
+  }
+
+  .MuiTab-root {
+    padding: 6px 15px 6px 12px!important;
+    text-transform: none !important;
+    min-height: 0px !important;
+    min-width: 0px !important;
+    &:hover {
+      background-color: $extraExtraLightGrey !important;
+        }
+  }
+
+
+  .MuiTabs-root {
+
+    .Mui-selected {
+      background-color: $white !important;
+      &:hover {
+        background-color:  $white !important;
+          }
+    }
+  }
+
+.landscape-modal {
+  overflow: scroll
+}
+
+legend {
+  font-family: Roboto !important;
+  color: $mediumGrey !important;
+  font-size: 15px !important;
+}
+
+.QuesstRadioButton {
+
+    margin-right: 5px !important;
+
+  &:hover {
+  color: $darkGrey !important;
+  background: $extraLightGrey !important;
+  }
+}
+
+.Mui-checked {
+  &:hover {
+  color: $primaryBlue !important;
+  background: #00a2f133 !important;
+  }
+}
+
+.MuiDialog-container {
+  .MuiPaper-root {
+    margin: 0px !important;
+  }
+}
+
+.confirmation-modal {
+  [class*='MuiDialog-paper'] {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+}
+
+.MuiAvatarGroup-root {
+  margin-left: 8px;
+}
+
+.MuiTab-wrapper {
+  flex-direction: row !important;
+}
+
+.MuiTab-labelIcon {
+  min-height: 48px !important;
+    padding-top: 6px !important;
+    .MuiTab-wrapper>*:first-child  {
+      margin-bottom: 0px !important;
+    }
+}
+
+.MuiTabs-flexContainer {
+  height: 48px !important;
+  .Mui-selected {
+    color: $primaryBlue !important;
+  }
+}
+[class*='PrivateTabIndicator-colorPrimary'] {
+      background-color: $primaryBlue !important;
+     }
+
+     [class*='MuiTabs-indicator'] {
+      background-color: $primaryBlue !important;
+     }
+
+.MuiTabs-scrollButtons {
+
+  .MuiSvgIcon-root {
+    fill: $mediumGrey !important;
+    color: $mediumGrey !important;
+  }
+
+  &:hover {
+    background-color: $extraExtraLightGrey !important;
+    .MuiSvgIcon-root {
+      fill: $primaryBlue !important;
+      color: $primaryBlue !important
+    }
+}
+}
+
+.rotate-360 {
+  transform: rotate(180deg);
+}
+
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
+.feed-top-searchCard::-webkit-scrollbar {
+  width: 0px !important;
+  background: transparent !important;
+  display: none !important;
+  }

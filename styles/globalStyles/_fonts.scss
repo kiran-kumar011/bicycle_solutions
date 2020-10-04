@@ -1,0 +1,29 @@
+$font-0-v3: "Roboto";
+$font-1-v2: "RobotoThin";
+$font-1-v3: "RobotoBold";
+$font-1-v4: "RobotoLight";
+
+
+$url-0-v3: url("~/static/fonts/roboto/Roboto-Regular.ttf");
+$url-1-v2: url("~/static/fonts/roboto/Roboto-Thin.ttf");
+$url-1-v4: url("~/static/fonts/roboto/Roboto-Light.ttf");
+$url-1-v3: url("~/static/fonts/roboto/Roboto-Bold.ttf");
+
+@font-face {
+ font-family: $font-1-v4;
+ src: $url-1-v4;
+}
+@font-face {
+  font-family: $font-0-v3;
+  src: $url-0-v3;
+ }
+
+@font-face {
+ font-family: $font-1-v2;
+ src: $url-1-v2;
+}
+
+@font-face {
+    font-family: $font-1-v3;
+    src: $url-1-v3;
+   }

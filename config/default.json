@@ -1,0 +1,4 @@
+{
+  "GATEWAY_URL": "http://0.0.0.0:3000",
+  "APPLICATION_URL": "http://localhost:3000"
+}
